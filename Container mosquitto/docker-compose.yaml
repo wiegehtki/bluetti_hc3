@@ -1,0 +1,16 @@
+services:
+    mosquitto:
+        container_name: mosquitto
+        restart: always
+        image: eclipse-mosquitto
+        ports:
+            - "1883:1883"
+        volumes:
+            - /mnt/nvme/opt/mosquitto/config:/mosquitto/config
+            - /mnt/nvme/opt/mosquitto/data:/mosquitto/data
+            - /mnt/nvme/opt/mosquitto/log:/mosquitto/log
+        networks:
+            - default
+
+networks:
+    default:
