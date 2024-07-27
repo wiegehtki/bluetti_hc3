@@ -1,6 +1,8 @@
 Ich wollte unbedingt meinen Bluetti EP 500 Pro in Fibaro HC3 integrieren. Leider hat Bluetti, soweit ich sehen kann, keine direkt zugängliche lokale API. Daher musste ich ein wenig kreativ werden. Und so funktioniert es:
 
 **Schritt 1:** Du benötigst zunächst ein Zwischenstück zwischen der Bluetti und Fibaro. Dafür verwende ich einen Raspberry Pi mit dem neuesten Raspian. Der RPi muss Bluetooth nutzen können und in der Nähe der Bluetti positioniert sein. Nachdem der RPi mit einem frischen OS gestartet wurde und du dich per SSH einloggen kannst, musst du einen Service installieren, der von https://pypi.org/user/chromedshark/ entwickelt wurde. Ich gehe davon aus, dass jemand, der dies umsetzt, das nötige Wissen hat, um einen RPi zu installieren. Dies ist also kein Leitfaden für absolute Anfänger, sorry dafür.
+ 
+`sudo  apt-get update && apt-get install -y bluez bluez-tools`
 
 **Schritt 2: Installation des MOSQUITTO MQTT Brokers.** Es gibt gefühlt tausende Anleitungen dafür, benutze eine davon. Ich verwende diesen als Container, ist aber kein muss.
 
@@ -80,7 +82,6 @@ Installiere die angehängte QA-Datei und passe die IP-Adresse im Variablenfeld a
 
 Sobald SDM_ACTIVE auf true gesetzt ist, werden die Kindgeräte erstellt. Dann müssen die Icons der Sensoren und Schalter manuell angepasst werden. Ich werde das irgendwann schöner machen, wenn ich Zeit habe.
 
-Die QA findet ihr unter https://github.com/wiegehtki/bluetti_hc3 (ich darf aktuell keine Anhänge hochladen weil noch neuer Benutzer)
 
 Weitere Variablen:
 
